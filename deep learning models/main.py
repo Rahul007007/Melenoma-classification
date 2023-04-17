@@ -6,7 +6,7 @@ Created on Mon Mar 22 04:58:28 2021
 """
 import sys 
 
-sys.path.insert(0,'D:/work & study/Nawah/Datasets/codes/deep learning models')
+sys.path.insert(0,'/kaggle/working/Melenoma-classification/deep learning models')
 from CNN_model import Inception_v3
 from CNN_model import VGG_16
 from CNN_model import simple_CNN
