@@ -12,7 +12,7 @@ from keras.callbacks import EarlyStopping
 from sklearn.utils import class_weight
 from tensorflow.keras.optimizers import SGD
 
-sys.path.insert(0,'D:/work & study/Nawah/Datasets/codes/evaluation metrics')
+sys.path.insert(0,'/kaggle/working/Melenoma-classification/evaluation metrics')
 from f1_score import f1,f1_micro
 from classification_metrics import confusion_matrix_calc
 
