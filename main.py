@@ -10,15 +10,15 @@ import sys
 
 import tensorflow.compat.v1 as tf
 
-sys.path.insert(0,'D:/work & study/Nawah/Datasets/codes/loading and storing')
+sys.path.insert(0,'/kaggle/working/Melenoma-classification/loading and storing')
 from loading_images import load_images_from_folder
-sys.path.insert(0,'D:/work & study/Nawah/Datasets/codes/preprocessing')
+sys.path.insert(0,'/kaggle/working/Melenoma-classification/preprocessing')
 from exploration import  bar_plot,class_counts_proportions
 from preprocessing import splitting_normalization
 from preprocessing import splitting_classes
-sys.path.insert(0,'D:/work & study/Nawah/Datasets/codes/deep learning models')
+sys.path.insert(0,'/kaggle/working/Melenoma-classification/deep learning models')
 from main import select_CNN_model
-sys.path.insert(0,'D:/work & study/Nawah/Datasets/codes/deep learning models')
+sys.path.insert(0,'/kaggle/working/Melenoma-classification/deep learning models')
 from training import training_model 
 
 
@@ -28,12 +28,12 @@ print('\t\u2022 tf.keras version:', tf.keras.__version__)
 print('\t\u2022 Running on GPU' if tf.config.list_physical_devices('GPU') else '\t\u2022 GPU device not found. Running on CPU')
 
 #%%  Loading the png data and split and normalize it 
-images_dir = "D:\\work & study\\Nawah\\Datasets\\ISIC_2019_Training_Input\\ISIC_2019_Training_Input"
+images_dir = "/kaggle/input/isic2019/ISIC_2019_Training_Input/ISIC_2019_Training_Input"
 width = 224
 height = 224
 input_data = load_images_from_folder(images_dir,width,height)
 #%% preprocessiing 
-labels = pd.read_csv("D:/work & study/Nawah/Datasets/ISIC_2019_Training_GroundTruth.csv")
+labels = pd.read_csv("/kaggle/input/isic2019/ISIC_2019_Training_GroundTruth.csv")
 labels=labels.iloc[:,1:]
 labels.head()
 #%%  splitting the data and normalizing it 
@@ -57,7 +57,7 @@ test_data_labels_two_classes] = splitting_classes(test_data,test_labels)
 
 
 #%% underesampling the data 
-sys.path.insert(0,'D:/work & study/Nawah/Datasets/codes/preprocessing')
+sys.path.insert(0,'/kaggle/working/Melenoma-classification/preprocessing')
 from preprocessing import resampling
 resampling_stragey = {1:4500}
 resampled_training_data, resampled_labels = resampling(
